@@ -16,6 +16,12 @@ def draw():
         point1 = (x,y - size)
         point2 = (x - size, y + size)
         point3 = (x + size, y + size)
-        screen.draw.line(point1, point2, ())
+        screen.draw.line(point1, point2, (r,g,b))
+        screen.draw.line(point2, point3, (r,g,b))
+        screen.draw.line(point3, point1, (r,g,b))
+        size +=10
+        r -= 10
+        g +=10
 
 pgzrun.go()
+
