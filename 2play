@@ -1,0 +1,36 @@
+import pgzrun
+
+WIDTH = 640
+HEIGHT = 640
+
+player2 = Actor("ufo")
+player1 = Actor("bee")
+
+player2.pos = (50,320)
+player1.pos = (590,320)
+
+def draw():
+    screen.clear()
+    player1.draw()
+    player2.draw()
+
+def on_key_down(key):
+    if key == keys.UP:
+        player2.y -= 20
+    elif key == keys.DOWN:
+        player2.y += 20
+    elif key == keys.LEFT:
+        player2.x -= 20
+    elif key == keys.RIGHT:
+        player2.x += 20
+    
+    if key == keys.W:
+        player1.y -= 20
+    elif key == keys.A:
+        player1.x -= 20
+    elif key == keys.S:
+        player1.y += 20
+    elif key == keys.D:
+        player1.x += 20
+
+pgzrun.go()
