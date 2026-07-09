@@ -7,11 +7,12 @@ HEIGHT = 500
 score = 0
 game_over = False
 
-decobee = Actor("bee")
-decobee.pos = (0,250)
 
 bee = Actor("bee")
 bee.pos = 100,100
+
+decobee = Actor("bee")
+decobee.pos = 100, 250
 
 flower = Actor("flower")
 flower.pos = 200,200
@@ -25,13 +26,39 @@ def draw():
 
     if game_over:
         screen.fill("#ffadad")
-        screen.draw.text("Final Score: " + str(score), middle = (300, 250), fontsize = 70, color = "white")
+        screen.draw.text("Final Score: " + str(score), midtop = (310, 235), fontsize = 70, color = "white")
         decobee.draw()
 
 def place_flower():
-    flower.x = randint(70, WIDTH - 70)
-    flower.y = randint(70, WIDTH - 70)
+    flower.x = randint(70, (WIDTH - 70))
+    flower.y = randint(70, (HEIGHT - 70))
 
+def time_up():
+    global game_over
+    game_over = True
 
+def update():
+    global score
+
+    if keyboard.left:
+        bee.x = bee.x - 2
+    
+    if keyboard.right:
+        bee.x = bee.x + 2
+
+    if keyboard.up:
+        bee.y = bee.y - 2
+
+    if keyboard.down:
+        bee.y = bee.y + 2
+    
+    flower_collected = bee.colliderect(flower)
+
+    if flower_collected:
+        score = score + 10
+        sounds.coin.play()
+        place_flower()
+
+clock.schedule(time_up, 60.0)
 
 pgzrun.go()
