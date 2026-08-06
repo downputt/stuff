@@ -1,0 +1,34 @@
+import random
+
+secset = set(random.sample(range(1,21),5))
+
+gssnums = set()
+
+attempts = 0
+
+print("Welcome to Number Hangman!")
+print("5 different numbers are selected from 1 - 20.")
+print("Guess them.\n")
+
+while gssnums != secset:
+    guess = int(input("Enter your guess: "))
+
+    attempts += 1
+
+    if guess in gssnums:
+        print("You already guessed this.")
+
+    elif guess in secset:
+        print("Correct!")
+        gssnums.add(guess)
+
+    else:
+        print("Wrong.")
+
+    print("Correct Guesses: ", gssnums)
+    print()
+
+print("Congratulations! You won!")
+print("Answers: ", secset)
+
+print("Total Attempts: ", attempts)
