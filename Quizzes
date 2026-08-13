@@ -1,0 +1,29 @@
+import pgzrun
+
+TITLE = "TV TIME"
+WIDTH = 870
+HEIGHT = 650
+
+marqbx = Rect(0,0,880,80)
+quesbx = Rect(0,0,650,150)
+timbx = Rect(0,0,150,150)
+ansbx1 = Rect(0,0,300,150)
+ansbx2 = Rect(0,0,300,150)
+ansbx3 = Rect(0,0,300,150)
+ansbx4 = Rect(0,0,300,150)
+skibx = Rect(0,0,150,330)
+
+score = 0
+timlft = 20
+qusflenm = "questions.txt"
+marqmess = ""
+isgamov = False
+
+ansboxs = [ansbx1,ansbx2,ansbx3,ansbx4]
+
+questions = []
+quescnt = 0
+quesindx = 0
+
+marqbx.move.jp(0,0)
+quesbx
