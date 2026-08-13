@@ -1,0 +1,59 @@
+import pgzrun
+
+Alan = (63)
+James = (98)
+Mike = (42)
+
+print("")
+print("")
+print("")
+print("")
+print("")
+print("")
+
+if Alan >= 60:
+    print("Alan:")
+    print("Mark: ", Alan, "%")
+    print ("Passed!")
+
+else:
+    print("Failed.")
+
+print("")
+print("")
+print("")
+print("")
+print("")
+print("")
+
+if James >= 60:
+    print("James:")
+    print("Mark: ", James, "%")
+    print ("Passed!")
+
+else:
+    print("Failed.")
+
+print("")
+print("")
+print("")
+print("")
+print("")
+print("")
+
+if Mike >= 60:
+    print("Mike:")
+    print("Mark: ", Mike, "%")
+    print ("Passed!")
+
+else:
+    print("Mike:")
+    print("Mark: ", Mike, "%")
+    print("Failed.")
+
+print("")
+print("")
+print("")
+print("")
+print("")
+print("")
