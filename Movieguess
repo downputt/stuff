@@ -1,0 +1,40 @@
+import random
+
+words = ["spiderman","avengers","fantastic 4","lego","ratatouille","monster inc","the odyssey","jurassic park"]
+
+secset = set(random.sample(words,3))
+
+gsswrd = set()
+
+attempts = 0
+
+print("Welcome to Word Guessr!")
+print("3 different Movies are selected from the word list.")
+print("Guess them.\n")
+print("This is the word list: \n", words)
+
+while gsswrd != secset:
+    guess = input("Enter your guess: ").lower()
+
+    attempts += 1
+
+    if guess in gsswrd:
+        print("You already guessed this.")
+
+    elif guess not in words:
+        print("Choose from the list.")
+
+    elif guess in secset:
+        print("Correct!")
+        gsswrd.add(guess)
+
+    else:
+        print("Wrong.")
+
+    print("Correct Guesses: ", gsswrd)
+    print()
+
+print("Congratulations! You won!")
+print("Answers: ", secset)
+
+print("Total Attempts: ", attempts)
