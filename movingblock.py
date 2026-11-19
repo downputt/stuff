@@ -46,18 +46,6 @@ while running:
 
     keys = pygame.key.get_pressed()
 
-    moving = (
-        keys[pygame.K_LEFT] or
-        keys[pygame.K_RIGHT] or
-        keys[pygame.K_UP] or
-        keys[pygame.K_DOWN]
-    )
+    direction = None
 
-    if state == "still" and moving:
-        state = "transition"
-        nexstate = "move"
-        curframe = 0
-
-    elif state == "move" and not moving:
-        state = "impact"
-        next
+    if keys[]
